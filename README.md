@@ -134,6 +134,18 @@ INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 8, 2);
 INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 9, 3);
 INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 10, 4);
 ```
+
+Seleciona todos os campos da tabela
+
+SELECT TB_BELONGING.*, TB_GAME.TITLE 
+FROM TB_BELONGING
+INNER JOIN TB_GAME ON TB_GAME.ID = TB_BELONGING.GAME_ID
+WHERE TB_BELONGING.LIST_ID = 2
+ORDER BY TB_BELONGING.POSITION;
+
+http://localhost:8080/h2-console/login.do?jsessionid=4d5eead83d3820929af082e2ccb70634 
+
+
 Script Docker Compose
 
 https://gist.github.com/acenelio/5e40b27cfc40151e36beec1e27c4ff71
